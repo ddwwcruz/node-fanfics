@@ -1,7 +1,10 @@
 {
   "name": "node-fanfics",
   "version": "0.0.1",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "build-watch": "tsc -w"
+  },
   "dependencies": {
     "request": "^2.81.0"
   },
