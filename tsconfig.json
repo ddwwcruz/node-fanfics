@@ -3,7 +3,8 @@
     "target": "es6",
     "declaration": true,
     "declarationDir": "typings",
-    "outDir": "build"
+    "outDir": "build",
+    "pretty": true
   },
   "include": [
     "src/**/*.ts"
