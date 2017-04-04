@@ -21,7 +21,7 @@ function buildInfo(args: string): StoryInformation {
  * @param id ID of the Story
  */
 export default function (id: number): Promise<StoryInformation> {
-    return new Promise((resolve, reject) => {
+    return new Promise<StoryInformation>((resolve, reject) => {
         request.get(`https://www.fanfiction.net/s/${id}`, (err, res, body) => {
             if (err) {
                 reject(err)
