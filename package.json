@@ -2,6 +2,11 @@
   "name": "node-fanfics",
   "version": "0.0.1",
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "@types/request": "^0.0.42",
+    "typescript": "^2.2.2"
+  }
 }
