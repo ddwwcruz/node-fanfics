@@ -1,14 +1,13 @@
 import * as request from 'request'
+import { env } from 'jsdom'
 
 export interface StoryInformation {
     title: string
     authorName: string
 }
 
-function buildInfo(args: string): StoryInformation {
-    var parser = new DOMParser()
-    var dom = parser.parseFromString(args, 'text/html')
-        .getElementById('profile_top')
+function buildInfo(args: Window): StoryInformation {
+    var dom = args.document.getElementById('profile_top')
 
     var title = dom.querySelector('b.xcontrast_txt').textContent
     var authorElement = dom.querySelector('a.xcontrast_txt')
@@ -33,9 +32,14 @@ export default function (id: number): Promise<StoryInformation> {
             }
             if (res && res.statusCode) {
                 try {
-                    var info = buildInfo(body)
-
-                    resolve(info)
+                    env(body, (err, dom) => {
+                        if (err) {
+                            reject(err)
+                        } else {
+                            var info = buildInfo(dom)
+                            resolve(info)
+                        }
+                    })
                 } catch (err) {
                     reject(err)
                 }
