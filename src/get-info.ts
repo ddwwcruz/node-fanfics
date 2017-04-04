@@ -5,6 +5,7 @@ export interface StoryInformation {
     title: string
     authorName: string
     summary: string
+    chapters: number
 }
 
 function buildInfo(args: Window): StoryInformation {
@@ -14,11 +15,20 @@ function buildInfo(args: Window): StoryInformation {
     var authorElement = dom.querySelector('a.xcontrast_txt')
     var authorName = authorElement.textContent
     var summary = dom.querySelector('div.xcontrast_txt').textContent
+    var chapters = 1
+
+    try {
+        chapters = args.document.getElementById('chap_select')
+            .querySelectorAll('option')
+            .length
+    } catch (err) {
+    }
 
     return {
         title,
         authorName,
-        summary
+        summary,
+        chapters
     }
 }
 
@@ -26,7 +36,7 @@ function buildInfo(args: Window): StoryInformation {
  * Gets information from Fanfiction.net
  * @param id ID of the Story
  */
-export default function (id: number): Promise<StoryInformation> {
+export default async function (id: number): Promise<StoryInformation> {
     return new Promise<StoryInformation>((resolve, reject) => {
         request.get(`https://www.fanfiction.net/s/${id}`, (err, res, body) => {
             if (err) {
