@@ -4,6 +4,7 @@ import { env } from 'jsdom'
 export interface StoryInformation {
     title: string
     authorName: string
+    summary: string
 }
 
 function buildInfo(args: Window): StoryInformation {
@@ -12,10 +13,12 @@ function buildInfo(args: Window): StoryInformation {
     var title = dom.querySelector('b.xcontrast_txt').textContent
     var authorElement = dom.querySelector('a.xcontrast_txt')
     var authorName = authorElement.textContent
+    var summary = dom.querySelector('div.xcontrast_txt').textContent
 
     return {
         title,
-        authorName
+        authorName,
+        summary
     }
 }
 
