@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "declaration": true,
+    "declarationDir": "typings",
+    "outDir": "build"
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
