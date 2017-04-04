@@ -5,6 +5,9 @@
     "build": "tsc",
     "build-watch": "tsc -w"
   },
+  "keywords": [
+    "fanfiction"
+  ],
   "dependencies": {
     "request": "^2.81.0"
   },
