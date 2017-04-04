@@ -4,6 +4,7 @@
     "declaration": true,
     "declarationDir": "build",
     "outDir": "build",
+    "sourceMap": true,
     "pretty": true
   },
   "include": [
