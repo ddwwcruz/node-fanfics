@@ -6,6 +6,10 @@
     "build": "tsc",
     "build-watch": "tsc -w"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ddwwcruz/node-fanfics.git"
+  },
   "keywords": [
     "fanfiction"
   ],
