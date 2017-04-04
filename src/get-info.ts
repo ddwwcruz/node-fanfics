@@ -2,6 +2,7 @@ import * as request from 'request'
 
 export interface StoryInformation {
     title: string
+    authorName: string
 }
 
 function buildInfo(args: string): StoryInformation {
@@ -10,9 +11,12 @@ function buildInfo(args: string): StoryInformation {
         .getElementById('profile_top')
 
     var title = dom.querySelector('b.xcontrast_txt').textContent
+    var authorElement = dom.querySelector('a.xcontrast_txt')
+    var authorName = authorElement.textContent
 
     return {
-        title
+        title,
+        authorName
     }
 }
 
