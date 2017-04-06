@@ -1,5 +1,10 @@
 # node-fanfics
 
+## Installation
+```
+npm install node-fanfics
+```
+
 ## Usage
 
 Fetching a story
