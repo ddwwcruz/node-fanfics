@@ -24,4 +24,15 @@ nodeFanfics.getChapter(storyId, chapterNumber).then(function (chapter) {
 }).catch(function (error) {
     // something wrong happened while fetching the chapter
 })
+
+// Fetches all chapters from a story
+nodeFanfics.getAllChapters(storyId, chapters).then(function (chapters) {
+    // loop through the chapters
+    for (let chapter of chapters) {
+        chapter.title // title of chapter
+        chapter.content // contents of chapter
+    }
+}).catch(function (error) {
+    // something wrong happened while fetching the chapters
+})
 ```
