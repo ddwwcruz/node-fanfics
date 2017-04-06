@@ -13,7 +13,8 @@
     "url": "git+https://github.com/ddwwcruz/node-fanfics.git"
   },
   "files": [
-    "build"
+    "build",
+    "typings"
   ],
   "keywords": [
     "fanfiction"
