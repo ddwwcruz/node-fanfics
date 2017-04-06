@@ -1,4 +1,4 @@
-import getChapter from './get-chapter'
+import { getChapter } from './get-chapter'
 import Chapter from './chapter'
 
 function* genChapterUrls(id: number, chapters: number) {
@@ -7,7 +7,7 @@ function* genChapterUrls(id: number, chapters: number) {
     }
 }
 
-export default async function (id: number, chapters: number) {
+export async function getAllChapters(id: number, chapters: number) {
     var chapterPromisesGen = genChapterUrls(id, chapters)
     return Promise.all([...chapterPromisesGen])
 }

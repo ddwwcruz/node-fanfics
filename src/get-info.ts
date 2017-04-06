@@ -44,7 +44,7 @@ function buildInfo(args: Window): StoryInformation {
  * Gets information from Fanfiction.net
  * @param id ID of the Story
  */
-export default async function (id: number): Promise<StoryInformation> {
+export async function getInfo(id: number): Promise<StoryInformation> {
     return new Promise<StoryInformation>((resolve, reject) => {
         request.get(`https://www.fanfiction.net/s/${id}`, (err, res, body) => {
             if (err) {
