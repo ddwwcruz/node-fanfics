@@ -50,3 +50,12 @@ nodeFanfics.getAuthorInfo(authorId).then(function (author) {
     // something wrong happened while fetching author's profile
 })
 ```
+
+All functions return [ES6 Promises](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+They can be used like this:
+```js
+var storyInfo = await nodeFanfics.getInfo(storyId)
+var chapter = await nodeFanfics.getChapter(storyId, chapterNumber)
+var chapters = await nodeFanfics.getAllChapters(storyId, numberOfChapters)
+var author =  await nodeFanfics.getAuthorInfo(authorId)
+```
