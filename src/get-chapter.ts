@@ -36,7 +36,7 @@ async function getChapterDOM(id: number, chapter: number) {
  * @param id ID number of the story
  * @param chapter Chapter number to retrieve
  */
-export default async function (id: number, chapter: number) {
+export async function getChapter(id: number, chapter: number) {
     var dom = await getChapterDOM(id, chapter)
 
     return new Promise<Chapter>((resolve, reject) => {

@@ -4,7 +4,9 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "build-watch": "tsc -w"
+    "build-watch": "tsc -w",
+    "postinstall": "cp -rf typings ../@types/node-fanfics",
+    "uninstall": "rm -rf ../@types/node-fanfics"
   },
   "repository": {
     "type": "git",
