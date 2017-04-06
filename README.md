@@ -35,4 +35,11 @@ nodeFanfics.getAllChapters(storyId, chapters).then(function (chapters) {
 }).catch(function (error) {
     // something wrong happened while fetching the chapters
 })
+
+// Fetches information from author (you stalker)
+nodeFanfics.getAuthorInfo(authorId).then(function (author) {
+    author.name // name of the author
+    author.profileText // what the author wrote on their profile
+    author.imgUrl // url the author's profile picture
+})
 ```
