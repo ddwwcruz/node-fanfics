@@ -4,7 +4,9 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "build-watch": "tsc -w"
+    "build-watch": "tsc -w",
+    "install": "node install.js",
+    "uninstall": "node uninstall.js"
   },
   "repository": {
     "type": "git",
