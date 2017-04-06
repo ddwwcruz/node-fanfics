@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "build-watch": "tsc -w",
-    "postinstall": "node install.js",
-    "uninstall": "node uninstall.js"
+    "postinstall": "cp -rf typings ../@types/node-fanfics",
+    "uninstall": "rm -rf ../@types/node-fanfics"
   },
   "repository": {
     "type": "git",
