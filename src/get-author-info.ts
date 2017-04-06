@@ -1,4 +1,4 @@
-import * as request from 'request'
+import { get } from 'request'
 import { env } from 'jsdom'
 
 export interface AuthorInformation {
