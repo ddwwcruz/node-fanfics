@@ -46,5 +46,7 @@ nodeFanfics.getAuthorInfo(authorId).then(function (author) {
     author.name // name of the author
     author.profileText // author's profile
     author.imgUrl // url the author's profile picture
+}).catch(function (error) {
+    // something wrong happened while fetching author's profile
 })
 ```
