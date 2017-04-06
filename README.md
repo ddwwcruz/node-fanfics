@@ -16,4 +16,12 @@ nodeFanfics.getInfo(storyId).then(function (info) {
 }).catch(function (error) {
     // something wrong happened and the story wasn't fetched
 })
+
+// Fetches a chapter
+nodeFanfics.getChapter(storyId, chapterNumber).then(function (chapter) {
+    chapter.title // title of chapter
+    chapter.content // contents of chapter
+}).catch(function (error) {
+    // something wrong happened while fetching the chapter
+})
 ```
