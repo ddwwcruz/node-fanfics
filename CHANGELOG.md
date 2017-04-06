@@ -4,3 +4,4 @@
 
 ### Added Features
 * Get info now includes the URL of the cover image.
+* Added function to get author information
