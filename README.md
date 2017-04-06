@@ -14,6 +14,6 @@ nodeFanfics.getInfo(storyId).then(function (info) {
     info.chapters // number of chapters in the story
     info.imgUrl // url of the story's cover image
 }).catch(function (error) {
-    // something wrong happened and the story wasn't
+    // something wrong happened and the story wasn't fetched
 })
 ```
