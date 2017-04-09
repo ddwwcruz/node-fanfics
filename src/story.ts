@@ -18,6 +18,15 @@ export default class Story {
     ) { }
 
     async getChapters(start = 1, end = this.chapters) {
+        if (start < 1) {
+            throw new Error('Chapters must start at at least 1')
+        }
+        if (end > this.chapters) {
+            throw new Error('Chapters must end at story\'s number of chapters')
+        }
+        if (start > end) {
+            throw new Error('Start chapter is greater than end chapter')
+        }
         var chapterGetters = genChapterGetters(this.id, start, end)
         return Promise.all([...chapterGetters])
     }
