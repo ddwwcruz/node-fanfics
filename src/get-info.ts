@@ -1,5 +1,6 @@
 import * as request from 'request'
 import { env } from 'jsdom'
+import Story from './story'
 
 export interface StoryInformation {
     title: string
@@ -44,8 +45,8 @@ function buildInfo(args: Window): StoryInformation {
  * Gets information from Fanfiction.net
  * @param id ID of the Story
  */
-export async function getInfo(id: number): Promise<StoryInformation> {
-    return new Promise<StoryInformation>((resolve, reject) => {
+export async function getInfo(id: number): Promise<Story> {
+    return new Promise<Story>((resolve, reject) => {
         request.get(`https://www.fanfiction.net/s/${id}`, (err, res, body) => {
             if (err) {
                 reject(err)
@@ -58,7 +59,14 @@ export async function getInfo(id: number): Promise<StoryInformation> {
                             reject(err)
                         } else {
                             var info = buildInfo(dom)
-                            resolve(info)
+                            resolve(new Story(
+                                id,
+                                info.title,
+                                info.authorName,
+                                info.summary,
+                                info.chapters,
+                                info.imgUrl
+                            ))
                         }
                     })
                 } catch (err) {

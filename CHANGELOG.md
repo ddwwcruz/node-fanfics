@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.11
+* Can now get chapters from story
+
 ## 0.0.8
 
 ### Added Features
