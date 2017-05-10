@@ -1,6 +1,6 @@
 {
   "name": "node-fanfics",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "build/index.js",
   "types": "typings/index.d.ts",
   "scripts": {
