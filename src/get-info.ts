@@ -11,33 +11,37 @@ export interface StoryInformation {
 }
 
 function buildInfo(args: Window): StoryInformation {
-    var dom = args.document.getElementById('profile_top')
-
-    var title = dom.querySelector('b.xcontrast_txt').textContent
-    var authorElement = dom.querySelector('a.xcontrast_txt')
-    var authorName = authorElement.textContent
-    var summary = dom.querySelector('div.xcontrast_txt').textContent
-    var chapters = 1
-    var imgUrl = null
-
     try {
-        chapters = args.document.getElementById('chap_select')
-            .querySelectorAll('option')
-            .length
-    } catch (err) {
-    }
+        var dom = args.document.getElementById('profile_top')
 
-    try {
-        imgUrl = dom.querySelector('img').src
-    } catch (err) {
-    }
+        var title = dom.querySelector('b.xcontrast_txt').textContent
+        var authorElement = dom.querySelector('a.xcontrast_txt')
+        var authorName = authorElement.textContent
+        var summary = dom.querySelector('div.xcontrast_txt').textContent
+        var chapters = 1
+        var imgUrl = null
 
-    return {
-        title,
-        authorName,
-        summary,
-        chapters,
-        imgUrl
+        try {
+            chapters = args.document.getElementById('chap_select')
+                .querySelectorAll('option')
+                .length
+        } catch (err) {
+        }
+
+        try {
+            imgUrl = dom.querySelector('img').src
+        } catch (err) {
+        }
+
+        return {
+            title,
+            authorName,
+            summary,
+            chapters,
+            imgUrl
+        }
+    } catch (err) {
+        throw err
     }
 }
 
