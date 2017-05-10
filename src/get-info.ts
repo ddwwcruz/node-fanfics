@@ -62,15 +62,20 @@ export async function getInfo(id: number): Promise<Story> {
                         if (err) {
                             reject(err)
                         } else {
-                            var info = buildInfo(dom)
-                            resolve(new Story(
-                                id,
-                                info.title,
-                                info.authorName,
-                                info.summary,
-                                info.chapters,
-                                info.imgUrl
-                            ))
+                            try {
+                                var info = buildInfo(dom)
+
+                                resolve(new Story(
+                                    id,
+                                    info.title,
+                                    info.authorName,
+                                    info.summary,
+                                    info.chapters,
+                                    info.imgUrl
+                                ))
+                            } catch (err) {
+                                reject(err)
+                            }
                         }
                     })
                 } catch (err) {
