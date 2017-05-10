@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/jsdom": "^2.0.30",
     "@types/request": "^0.0.42",
-    "typescript": "^2.2.2"
+    "typescript": "^2.3.2"
   },
   "description": "Fetches stories from Fanfiction.net",
   "bugs": {
