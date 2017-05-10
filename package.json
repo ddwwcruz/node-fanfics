@@ -13,7 +13,8 @@
   },
   "files": [
     "build",
-    "typings"
+    "typings",
+    "src"
   ],
   "keywords": [
     "fanfiction"
